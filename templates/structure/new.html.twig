@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Structure{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+		<div class="row row-height">
+            <div class="col-xl-4 col-lg-4 content-left">
+				<div class="content-left-wrapper">
+					<a href="index.html" id="logo"><img src="{{asset('assets/img/3FPT.jpg')}}" alt="" width="45" height="45"></a>
+					<div id="social">
+						<ul>
+							<li><a href="https://www.facebook.com/asprh.officiel/?ref=br_rs" target="_blank"><i
+										class="icon-facebook"></i></a></li>
+							<li><a href="https://twitter.com/andcp_sn" target="_blank"><i class="icon-twitter"></i></a>
+							</li>
+							<li><a href="https://www.linkedin.com/in/asprh-ex-andcps-bb85424b/" target="_blank"><i
+										class="icon-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<!-- /social -->
+					<div>
+						<figure><img src="{{asset('assets/img/asprh.jpg')}}" alt="" class="img-fluid" width="230" height="230"></figure>
+						<h2>Receuil des besoins en formation </h2>
+						<p>
+						<ul>
+							<li> 1- Veuillez noter que tous les champs sont obligatoires à renseigner </li>
+							<li> 2- Pour ajouter un nouveau besoin, merci de remplir le formulaire à nouveau
+							</li>
+							<li> 3- A la fin de la saisie de tous vos besoins, merci de cliquer sur "Soumettre" pour
+								envoyer le formulaire. </li>
+						</ul>
+						</p>
+						<a href="#start" class="btn_1 rounded mobile_btn yellow">Lancez vous</a>
+					</div>
+					<div class="copy">© 2020 GAINDE2000</div>
+				</div>
+				<!-- /content-left-wrapper -->
+			</div>
+
+
+
+    {{ include('structure/_form.html.twig') }}
+
+{% endblock %}

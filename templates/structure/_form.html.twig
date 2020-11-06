@@ -1,0 +1,106 @@
+<div class="col-xl-8 col-lg-8 content-right" id="start">
+	<div id="wizard_container">
+		<div id="top-wizard">
+			<span id="location"></span>
+			<div id="progressbar"></div>
+		</div>
+{{ form_start(form) }}
+    <input id="website" name="website" type="text" value="">
+    <div id="middle-wizard">
+        <div class="step">
+		    <h2 class="section_title">Information sur la structure</h2>
+                <div class="form-group add_top_30">
+                    {{ form_row(form.Nom, { 'attr': {'class': 'form-control required','id': 'structure_Nom', 'onchange': 'getVals(this, "structure_Nom_field")'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.SecteurActivite, {'attr': { 'class': 'form-control required' }}) }}
+                </div>
+
+            <label> Membre de ASPRH ? </label>
+                {{ form_row(form.Membre, {'label_attr': {'class': 'label_none'}})}}
+
+
+            <label> Votre structure verse-t-elle la Contribution Forfaitaire à la Charge de l’Employeur ? </label>
+                {{ form_row(form.Cfce) }}
+
+            <div class="form-group">
+                {{ form_row(form.PrenomNomReferent,{ 'attr': {'class': 'form-control required','id': 'structure_PrenomNomReferent', 'onchange': 'getVals(this, "structure_PrenomNomReferent_field")'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.FonctionReferent,{ 'attr': {'class': 'form-control required','id': 'structure_FonctionReferent', 'onchange': 'getVals(this, "structure_FonctionReferent_field")'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.Telephone,{ 'attr': {'class': 'form-control required','id': 'structure_Telephone', 'onchange': 'getVals(this, "structure_Telephone_field")'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.Email,{ 'attr': {'class': 'form-control required','id': 'structure_Email', 'onchange': 'getVals(this, "structure_Email_field")'}}) }}
+            </div>
+        </div>
+
+        <div class="step">
+            <h2 class="section_title"> Vos Besoins </h2>
+                <ul class="tags" data-prototype="{{ form_widget(form.Besoin.vars.prototype)|e('html_attr') }}">
+                    {% for tag in form.Besoin %}
+
+                        <li class="form-group">
+                            {{ form_row(tag.Description,{ 'attr': {'class':'form-control required', 'id': '', 'onchange': ''} }) }}
+                        </li>
+
+                        <li class="form-group">
+                            {{ form_row(tag.Priorite,{ 'attr': {'class':'form-group radio_input', 'id': '', 'onchange': ''} }) }}
+                        </li>
+
+                        <li class="form-group">
+                            {{ form_row(tag.Cadre,{ 'attr': {'class':'form-control required', 'id': '', 'onchange': ''} }) }}
+                        </li>
+
+                        <li class="form-group">
+                            {{ form_row(tag.Agent,{ 'attr': {'class':'form-control required', 'id': '', 'onchange': ''} }) }}
+                        </li>
+
+                        <li class="form-group">
+                            {{ form_row(tag.Employer,{ 'attr': {'class':'form-control required', 'id': '', 'onchange': ''} }) }}
+                        </li>
+
+                        <li class="form-group">
+                            {{ form_row(tag.Observation,{ 'attr': {'class':'form-control', 'id': '', 'onchange': ''} }) }}
+                        </li>
+
+                    {% endfor %}
+                </ul>
+        </div>
+
+    <!-- /step last-->
+    <div class="submit step" id="end">
+		<div class="summary">
+			<div class="wrapper">
+				<h3> Merci <br><span id="structure_PrenomNomReferent_field">!</span></h3>
+					<p> Cliquez sur <b>Soumettre</b> pour nous envoyer votre demande. Nous vous
+						contacterons rapidement à l'adresse e-mail suivante 
+                        <strong id="structure_Email_field"></strong> 
+                    </p>
+			</div>
+		</div>
+	</div>
+    <!--Fin Form Wizard-->
+
+</div>
+	<!-- /step last-->
+
+	<!-- /middle-wizard -->
+		<div id="bottom-wizard">
+			<button type="button" name="backward" class="backward">Precedent</button>
+			<button type="button" name="forward" class="forward" id="suiv">Suivant</button>
+			<button type="submit" name="process" class="submit">{{ button_label|default('Save') }}</button>
+		</div>
+	<!-- /bottom-wizard -->
+    </div>
+{{ form_end(form) }}
+			</div>
+				<!-- /Wizard container -->
+			</div>
+			<!-- /content-right-->
+		</div>
+		<!-- /row-->
+	</div>
