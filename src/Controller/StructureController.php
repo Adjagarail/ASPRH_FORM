@@ -6,6 +6,8 @@ use App\Entity\Besoin;
 use App\Entity\Structure;
 use App\Form\StructureType;
 use Doctrine\ORM\EntityManager;
+use Swift_Mailer;
+use Swift_Message;
 use App\Repository\StructureRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,13 +29,14 @@ class StructureController extends AbstractController
     {
         return $this->render('structure/index.html.twig', [
             'structures' => $structureRepository->findAll(),
+            dump('stuctures'),
         ]);
     }
 
     /**
      * @Route("/new", name="structure_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, \Swift_Mailer $mailer): Response
     {
         $structure = new Structure();
         $besoin1 = new Besoin();
@@ -45,9 +48,30 @@ class StructureController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $structure = $form->getData();
+            $besoin = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($structure);
             $entityManager->flush();
+
+            //Ici on procede a l'envoie du mail
+
+            $message = (new \Swift_Message('Nouveau contact'))
+                // On attribue l'expéditeur
+                ->setFrom($structure->getEmail())
+                // On attribue le destinataire
+                ->setTo('adjagarail@gmail.com', 'accuse de reception')
+                // On crée le texte avec la vue
+                ->setBody(
+                    $this->renderView(
+                        'emails/soumission.html.twig',
+                        compact('structure','besoin')
+                    ),
+                    'text/html'
+                );
+            $mailer->send($message);
+
+            $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.'); // Permet un message flash de renvoi
 
             return $this->redirectToRoute('structure_index');
         }
