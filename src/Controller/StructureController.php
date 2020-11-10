@@ -6,8 +6,6 @@ use App\Entity\Besoin;
 use App\Entity\Structure;
 use App\Form\StructureType;
 use Doctrine\ORM\EntityManager;
-use Swift_Mailer;
-use Swift_Message;
 use App\Repository\StructureRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;

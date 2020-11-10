@@ -16,16 +16,20 @@ class DashboardController extends AbstractController
      */
     public function index(StructureRepository $structureRepository, BesoinRepository $besoinRepository , EntityManagerInterface $entityManager): Response
     {
-        // Faire un decompte des entregistement qui existe en base de données
-
+            // Faire un decompte des entregistement qui existe en base de données
             $machin = $entityManager ->createQuery('SELECT COUNT(s) FROM App\Entity\Structure s')->getSingleScalarResult();
             $machin1 = $entityManager->createQuery('SELECT COUNT(b) FROM App\Entity\Besoin b')->getSingleScalarResult();
             $machin2 = $entityManager->createQuery('SELECT COUNT(a) FROM App\Entity\Activite a')->getSingleScalarResult();
+
+            // Faire la somme des Agents, des Employer et les Cadres pour la table des besoins
             $machin3 = $entityManager->createQuery('SELECT SUM(b.Employer) as Employer FROM App\Entity\Besoin b')->getSingleScalarResult();
             $machin4 = $entityManager->createQuery('SELECT SUM(b.Agent) as Agent FROM App\Entity\Besoin b')->getSingleScalarResult();
             $machin5 = $entityManager->createQuery('SELECT SUM(b.Cadre) as Cadre FROM App\Entity\Besoin b')->getSingleScalarResult();
+
+            // Faire le total des Agents, Employer et Cadre pour recuperation sur le Dashboard
             $machintotal = $machin3 + $machin4 + $machin5;
-        return $this->render('dashboard/index.html.twig', [
+            
+            return $this->render('dashboard/index.html.twig', [
             'structures' => $structureRepository->findAll(),
             'besoins'=> $besoinRepository->findAll(),
             'stats'=> [
