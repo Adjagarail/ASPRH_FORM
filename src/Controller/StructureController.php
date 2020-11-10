@@ -53,24 +53,21 @@ class StructureController extends AbstractController
 
             //Ici on procede a l'envoie du mail
 
-            $message = (new \Swift_Message('Nouveau contact'))
+            $message = (new \Swift_Message(' Une Nouvelle Souscription '))
                 // On attribue l'expéditeur
                 ->setFrom($structure->getEmail())
                 // On attribue le destinataire
-                ->setTo('adjagarail@gmail.com', 'accuse de reception')
+                ->setTo('adjagarail@gmail.com')
                 // On crée le texte avec la vue
                 ->setBody(
-                    $this->renderView(
-                        'emails/soumission.html.twig',
-                        compact('structure','besoin')
-                    ),
+                    $this->renderView( 'emails/soumission.html.twig', compact('structure','besoin') ),
                     'text/html'
                 );
             $mailer->send($message);
 
             $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.'); // Permet un message flash de renvoi
 
-            return $this->redirectToRoute('structure_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('structure/new.html.twig', [
