@@ -91,7 +91,8 @@ class StructureController extends AbstractController
      */
     public function edit(Request $request, Structure $structure, EntityManagerInterface $entityManager): Response
     {
-        if (null === $structure = $entityManager->getRepository(Structure::class)->find($id)) {
+        if (null === $structure = $entityManager->getRepository(Structure::class)->find($id)) 
+        {
             throw $this->createNotFoundException('No Structure found for id ' . $id);
         }
         
