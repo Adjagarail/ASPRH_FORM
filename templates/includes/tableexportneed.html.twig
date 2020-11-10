@@ -1,0 +1,43 @@
+            <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2> LES BESOINS FORMULES </h2>
+                    </div>
+                    <div class="body">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Entreprise</th>
+                                    <th>Description</th>
+                                    <th>Priorite</th>
+                                    <th>Cadre</th>
+                                    <th>Agent</th>
+                                    <th>Employer</th>
+                                    <th>Observation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for besoin in besoins %}
+                                <tr>
+                                    <td>{{ besoin.id }}</td>
+                                    <td>{{ besoin.Structure }}</td>
+                                    <td>{{ besoin.Description }}</td>
+                                    <td>{{ besoin.Priorite }}</td>
+                                    <td>{{ besoin.Cadre }}</td>
+                                    <td>{{ besoin.Agent }}</td>
+                                    <td>{{ besoin.Employer }}</td>
+                                    <td>{{ besoin.Observation }}</td>
+                                </tr>
+                                    {% else %}
+                                <tr>
+                                    <td colspan="9">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>

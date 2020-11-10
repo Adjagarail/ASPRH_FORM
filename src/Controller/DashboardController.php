@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\BesoinRepository;
 use App\Repository\StructureRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +14,7 @@ class DashboardController extends AbstractController
     /**
      * @Route("/admin", name="dashboard")
      */
-    public function index(StructureRepository $structureRepository, EntityManagerInterface $entityManager): Response
+    public function index(StructureRepository $structureRepository, BesoinRepository $besoinRepository , EntityManagerInterface $entityManager): Response
     {
         // Faire un decompte des entregistement qui existe en base de données
 
@@ -26,6 +27,7 @@ class DashboardController extends AbstractController
             $machintotal = $machin3 + $machin4 + $machin5;
         return $this->render('dashboard/index.html.twig', [
             'structures' => $structureRepository->findAll(),
+            'besoins'=> $besoinRepository->findAll(),
             'stats'=> [
                 'structure'=> $machin,
                 'besoin' => $machin1,
