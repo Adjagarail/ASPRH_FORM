@@ -127,8 +127,8 @@ $(window).on('scroll',function() {
 });
 
 //===============================================================================
-$(".dial1").knob();
-$({animatedVal: 0}).animate({animatedVal: 66}, {
+/** $(".dial1").knob();
+$({animatedVal: 0}).animate({animatedVal: 100}, {
     duration: 3000,
     easing: "swing", 
     step: function() { 
@@ -136,7 +136,7 @@ $({animatedVal: 0}).animate({animatedVal: 66}, {
     }
 });
 $(".dial2").knob();
-$({animatedVal: 0}).animate({animatedVal: 26}, {
+$({animatedVal: 0}).animate({animatedVal: 154}, {
     duration: 3800,
     easing: "swing", 
     step: function() { 
@@ -144,15 +144,16 @@ $({animatedVal: 0}).animate({animatedVal: 26}, {
     }
 });
 $(".dial3").knob();
-$({animatedVal: 0}).animate({animatedVal: 76}, {
+$({animatedVal: 0}).animate({animatedVal: 200}, {
     duration: 3200,
     easing: "swing", 
     step: function() { 
         $(".dial3").val(Math.ceil(this.animatedVal)).trigger("change"); 
     }
 });
+*/
 $(".dial4").knob();
-$({animatedVal: 0}).animate({animatedVal: 88}, {
+$({animatedVal: 0}).animate({animatedVal: 7500000}, {
     duration: 3500,
     easing: "swing", 
     step: function() { 
