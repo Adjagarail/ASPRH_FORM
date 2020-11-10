@@ -1,0 +1,45 @@
+            <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2> STRUCTURE DEJA INSCRIT </h2>
+                    </div>
+                    <div class="body">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Entreprise</th>
+                                    <th>Secteur D'activités</th>
+                                    <th>Membre</th>
+                                    <th>Cfce</th>
+                                    <th>Prenom & Nom du Referent</th>
+                                    <th>Fonction du Referent</th>
+                                    <th>Telephone</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for structure in structures %}
+                                <tr>
+                                    <td>{{ structure.id }}</td>
+                                    <td>{{ structure.Nom }}</td>
+                                    <td>{{ structure.SecteurActivite }}</td>
+                                    <td>{{ structure.Membre }}</td>
+                                    <td>{{ structure.Cfce }}</td>
+                                    <td>{{ structure.PrenomNomReferent }}</td>
+                                    <td>{{ structure.FonctionReferent }}</td>
+                                    <td>{{ structure.Telephone }}</td>
+                                    <td>{{ structure.Email }}</td>
+                                </tr>
+                                    {% else %}
+                                <tr>
+                                    <td colspan="9">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>

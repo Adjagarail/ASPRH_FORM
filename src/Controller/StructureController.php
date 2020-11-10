@@ -29,7 +29,6 @@ class StructureController extends AbstractController
     {
         return $this->render('structure/index.html.twig', [
             'structures' => $structureRepository->findAll(),
-            dump('stuctures'),
         ]);
     }
 
