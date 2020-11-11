@@ -1,9 +1,4 @@
 /*
-Theme Name: Potenza v 1.0
-Theme URI: http://www.ansonika.com/ponteza/
-Author: Ansonika
-Author URI: http://themeforest.net/user/Ansonika/
-
 [Table of contents] 
 
 1. SITE STRUCTURE and TYPOGRAPHY
@@ -1729,8 +1724,8 @@ body[dir=rtl] .fl-form .fl-wrap-select:after {
   left: 6px;
 }
 #condi{
-  -webkit-display: none;
+  display: none;
 }
 #condi{
-  -moz-display: none;
+  display: none;
 }
