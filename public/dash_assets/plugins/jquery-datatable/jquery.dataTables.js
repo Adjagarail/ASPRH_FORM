@@ -672,7 +672,7 @@
 		 * Change the pagination - provides the internal logic for pagination in a simple API
 		 * function. With this function you can have a DataTables table go to the next,
 		 * previous, first or last pages.
-		 *  @param {string|int} mAction Paging action to take: "first", "previous", "next" or "last"
+		 *  @param {string|int} mAction Paging action to take: "first", "precedent", "suivant" or "last"
 		 *    or page number to jump to (integer), note that page 0 is the first page.
 		 *  @param {bool} [bRedraw=true] Redraw the table or not
 		 *  @dtopt API
@@ -4895,8 +4895,8 @@
 	/**
 	 * Alter the display settings to change the page
 	 *  @param {object} settings DataTables settings object
-	 *  @param {string|int} action Paging action to take: "first", "previous",
-	 *    "next" or "last" or page number to jump to (integer)
+	 *  @param {string|int} action Paging action to take: "first", "precedent",
+	 *    "suivant" or "last" or page number to jump to (integer)
 	 *  @param [bool] redraw Automatically draw the update or not
 	 *  @returns {bool} true page has changed, false - no change
 	 *  @memberof DataTable#oApi
@@ -4925,7 +4925,7 @@
 		{
 			start = 0;
 		}
-		else if ( action == "previous" )
+		else if ( action == "precedent" )
 		{
 			start = len >= 0 ?
 				start - len :
@@ -4936,7 +4936,7 @@
 			  start = 0;
 			}
 		}
-		else if ( action == "next" )
+		else if ( action == "suivant" )
 		{
 			if ( start + len < records )
 			{
@@ -11311,13 +11311,13 @@
 				 *      $('#example').dataTable( {
 				 *        "language": {
 				 *          "paginate": {
-				 *            "next": "Next page"
+				 *            "suivant": "Next page"
 				 *          }
 				 *        }
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "suivant",
 	
 	
 				/**
@@ -11334,13 +11334,13 @@
 				 *      $('#example').dataTable( {
 				 *        "language": {
 				 *          "paginate": {
-				 *            "previous": "Previous page"
+				 *            "precedent": "Previous page"
 				 *          }
 				 *        }
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "precedent"
 			},
 	
 			/**
@@ -11636,7 +11636,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "search",
 	
 	
 			/**
