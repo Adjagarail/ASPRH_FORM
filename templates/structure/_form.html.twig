@@ -15,13 +15,12 @@
                 <div class="form-group">
                     {{ form_row(form.SecteurActivite, {'attr': { 'class': 'form-control required' }}) }}
                 </div>
+                
+                <label> Membre de ASPRH ? </label>
+                    {{ form_row(form.Membre, {'attr':{ 'class':'form-group radio_input' }})}}
 
-            <label> Membre de ASPRH ? </label>
-                {{ form_row(form.Membre, {'label_attr': {'class': 'label_none'}})}}
-
-
-            <label> Votre structure verse-t-elle la Contribution Forfaitaire à la Charge de l’Employeur ? </label>
-                {{ form_row(form.Cfce) }}
+                <label> Votre structure verse-t-elle la Contribution Forfaitaire à la Charge de l’Employeur ? </label>
+                    {{ form_row(form.Cfce, {'attr':{ 'class':'form-group radio_input' }}) }}
 
             <div class="form-group">
                 {{ form_row(form.PrenomNomReferent,{ 'attr': {'class': 'form-control required','id': 'structure_PrenomNomReferent', 'onchange': 'getVals(this, "structure_PrenomNomReferent_field")'}}) }}
@@ -38,7 +37,7 @@
             </div>
         </div>
 
-        <div class="step">
+        <div class="step collapse">
             <h2 class="section_title"> Vos Besoins </h2>
                 <ul class="tags" data-prototype="{{ form_widget(form.Besoin.vars.prototype)|e('html_attr') }}">
                     {% for tag in form.Besoin %}
@@ -66,7 +65,7 @@
                         <li class="form-group">
                             {{ form_row(tag.Observation,{ 'attr': {'class':'form-control', 'id': '', 'onchange': ''} }) }}
                         </li>
-
+                    
                     {% endfor %}
                 </ul>
         </div>
@@ -92,7 +91,7 @@
 		<div id="bottom-wizard">
 			<button type="button" name="backward" class="backward">Precedent</button>
 			<button type="button" name="forward" class="forward" id="suiv">Suivant</button>
-			<button type="submit" name="process" class="submit">{{ button_label|default('Save') }}</button>
+			<button type="submit" name="process" class="submit">{{ button_label|default('Soumettre') }}</button>
 		</div>
 	<!-- /bottom-wizard -->
     </div>

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BesoinRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,16 +30,22 @@ class Besoin
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Positive
+     * @Assert\NotBlank
      */
     private $Cadre;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Positive
+     * @Assert\NotBlank
      */
     private $Agent;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Positive
+     * @Assert\NotBlank
      */
     private $Employer;
 

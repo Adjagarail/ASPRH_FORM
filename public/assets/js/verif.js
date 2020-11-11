@@ -1,7 +1,7 @@
 var $collectionHolder;
 
 // setup an "add a tag" link
-var $addTagButton = $('<button type="button" class="btn btn-success"> Ajouter un Besoin </button>');
+var $addTagButton = $('<button type="button" class="btn btn-success" data-toggle="collapse"> Ajouter un Besoin </button>');
 var $newLinkLi = $('<li></li>').append($addTagButton);
 
 jQuery(document).ready(function () {
@@ -52,7 +52,7 @@ function addThemeForm($collectionHolder, $newLinkLi) {
 
 
 function addThemeFormDeleteLink($tagFormLi) {
-    var $removeFormButton = $('<button class="btn btn-danger" type="button"> Supprimer le Besoin </button>');
+    var $removeFormButton = $('<button class="btn btn-danger" style="margin: 20px 0px 20px 0px!important;" type="button"> Supprimer le Besoin </button>');
     $tagFormLi.append($removeFormButton);
 
     $removeFormButton.on('click', function (e) {

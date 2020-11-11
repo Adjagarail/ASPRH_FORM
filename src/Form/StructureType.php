@@ -24,8 +24,15 @@ class StructureType extends AbstractType
                     'OUI'=>'OUI',
                     'NON'=>'NON',
                 ],
+                'choice_attr' => [
+                    'OUI'=>['class'=> 'container_radio mr-3'],
+                    'NON'=>['class' => 'container_radio mr-3']
+                ],
+            'label'=> ' ',
+            'label_attr' => [
+                'class' => 'label_none'
+            ],
             'expanded' => true,
-            'label' => " ",
             ])
 
             ->add('Cfce', ChoiceType::class, [
@@ -33,9 +40,16 @@ class StructureType extends AbstractType
                 'OUI' => 'OUI',
                 'NON' => 'NON',
             ],
+            'choice_attr' => [
+                'OUI' => ['class' => 'container_radio mr-3'],
+                'NON' => ['class' => 'container_radio mr-3']
+            ],
+            'label'=> ' ',
+            'label_attr'=> [
+                'class' => 'label_none'
+            ],
             'expanded' => true,
-            'label' => " ",
-        ])
+            ])
 
             ->add('PrenomNomReferent', TextType::class)
             ->add('FonctionReferent', TextType::class)

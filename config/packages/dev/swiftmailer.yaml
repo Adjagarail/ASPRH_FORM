@@ -8,5 +8,5 @@ swiftmailer:
     host: smtp.gmail.com
     username: adjagarail@gmail.com
     password: koenigsegg
-    # send all emails to a specific address
+    #send all emails to a specific address
     #delivery_addresses: ['me@example.com']

@@ -26,6 +26,11 @@ class BesoinType extends AbstractType
                 'P2 * Important mais pas urgent (3 - 6 mois)' => 'P2',
                 'P3 * Important (à prévoir)' => 'P3',
             ],
+            'choice_attr' => [
+                'P1 * Important et urgent (moins de 3 mois)'=> ['class'=> 'container_radioss mr-3'],
+                'P2 * Important mais pas urgent (3 - 6 mois)'=> ['class' => 'container_radioss mr-3'],
+                'P3 * Important (à prévoir)'=> ['class' => 'container_radioss mr-3']
+            ],
             'expanded' => true,
             'label' => " Degré de priorité ",
             ])
@@ -46,7 +51,7 @@ class BesoinType extends AbstractType
         ])
             ->add('Observation', TextareaType::class, [
             'attr' => [
-                'class' => 'form-control required'
+                'class' => 'form-control'
             ]
         ])
         ;

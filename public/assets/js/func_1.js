@@ -3,7 +3,6 @@ jQuery(function($) {
     "use strict";
     
     $('form#wrapped').attr('action', 'send_email_1.php');
-    $('form#wrap').attr('action', 'send_email_2.php');
 
     $("#wizard_container").wizard({
         stepsWrapper: "#wrapped",
