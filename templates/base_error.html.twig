@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
 
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="{{asset('assets/css/style_error.css')}}">
-
-        <link href="{{asset('assets/css/metismenu.min.css')}}" rel="stylesheet" type="text/css">
-        <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{asset('error_assets/css/bootstrap.min.css'))}}">
+        <link rel="stylesheet" href="{{asset('error_assets/css/metisMenu.min.css'))}}">
+        <link rel="stylesheet" href="{{asset('error_assets/css/icons.css'))}}">
+        <link rel="stylesheet" href="{{asset('error_assets/css/style.css'))}}">
         
         {% block stylesheets %}{% endblock %}
     </head>
@@ -19,14 +19,14 @@
         {% block javascripts %}{% endblock %}
 
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/waves.min.js"></script>
+        <script src="{{asset('error_assets/js/jquery.min.js')}}"></script>
+        <script src="{{asset('error_assets/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('error_assets/js/metisMenu.min.js')}}"></script>
+        <script src="{{asset('error_assets/js/jquery.slimscroll.js')}}"></script>
+        <script src="{{asset('error_assets/js/waves.min.js')}}"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="{{asset('error_assets/js/app.js')}}"></script>
 
     </body>
 </html>

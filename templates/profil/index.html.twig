@@ -1,0 +1,266 @@
+{% extends 'base_dashboard.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+<!-- Searchbar Include -->
+{{ include('includes/search.html.twig') }}
+
+<!-- NavbarTop Includes -->
+{{ include('includes/navbartop.html.twig') }}
+<!-- Leftsidebar Includes -->
+{{ include('includes/leftsidebar.html.twig') }}
+<!-- Main Content -->
+
+<section class="content profile-page">
+    <section class="boxs-simple">
+        <div class="profile-header">
+            <div class="profile_info row">
+                <div class="col-lg-3 col-md-4 col-12">
+                    <div class="profile-image float-md-right"> <img src="https://ui-avatars.com/api/?name={{app.user.NomComplet}}&background=0D8ABC&color=fff&rounded=true" alt=""> </div>
+                </div>
+                <div class="col-lg-6 col-md-8 col-12">
+                    <h4 class="m-t-5 m-b-0"><strong>{{ app.user.NomComplet }}</strong></h4>
+                    <span class="job_post">{{ app.user.username }}</span>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>                
+            </div>
+        </div>
+          {{ include('includes/profil/nav_profil.html.twig') }}
+    </section>
+    <div class="container-fluid">       
+        <div class="row clearfix">
+
+            {{ include('includes/profil/about_us.html.twig')}}
+
+            <div class="col-lg-8 col-md-12">
+                <div class="card">
+                    <div class="body"> 
+                    {{ include('includes/profil/tabs.html.twig') }}
+                        
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="mypost">
+                                <div class="mypost-form">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="post-toolbar-b">
+                                        <a href="javascript:void(0);" class="btn btn-raised btn-default"><i class="zmdi zmdi-attachment"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-raised btn-default"><i class="zmdi zmdi-camera"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-raised btn-success">Post</a>
+                                    </div>
+                                </div>
+                                <div class="mypost-list m-t-30">
+                                    <div class="post-box">
+                                        <span class="date"><i class="zmdi zmdi-alarm"></i> 7 minutes ago</span>
+                                        <div class="post-img"><img src="assets/images/puppy-1.jpg" class="img-fluid" alt /></div>
+                                        <h4 class="post_title">It is a long established fact that a reader will be distracted</h4>
+                                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text</p>                                            
+                                        <div class="form-group">
+                                            <a href="javascript:void(0);" class="btn btn-raised btn-info"><i class="zmdi zmdi-favorite-outline"></i> Like (5) </a>
+                                            <a href="javascript:void(0);" class="btn btn-raised btn-default"><i class="zmdi zmdi-long-arrow-return"></i> Reply</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="post-box">
+                                        <span class="date"><i class="zmdi zmdi-alarm"></i> 18 minutes ago</span>
+                                        <div class="post-img"><img src="assets/images/puppy-2.jpg" class="img-fluid" alt /></div>
+                                        <h4 class="post_title">There are many variations of passages of Lorem Ipsum available</h4>
+                                        <p>Printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                                        <div class="form-group">
+                                            <a href="javascript:void(0);" class="btn btn-raised btn-info"><i class="zmdi zmdi-favorite-outline"></i> Like (5) </a>
+                                            <a href="javascript:void(0);" class="btn btn-raised btn-default"><i class="zmdi zmdi-long-arrow-return"></i> Reply</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="post-box">
+                                        <span class="date"><i class="zmdi zmdi-alarm"></i> 49 minutes ago</span>
+                                        <div class="post-img"><img src="assets/images/puppy-3.jpg" class="img-fluid" alt /></div>
+                                        <h4 class="post_title">Contrary to popular belief, Lorem Ipsum is not simply random text</h4>
+                                        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form</p>
+                                        <div class="form-group">
+                                            <a href="javascript:void(0);" class="btn btn-raised btn-info"><i class="zmdi zmdi-favorite-outline"></i> Like (5) </a>
+                                            <a href="javascript:void(0);" class="btn btn-raised btn-default"><i class="zmdi zmdi-long-arrow-return"></i> Reply</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="text-center"> <a href="javascript:void(0);" class="btn btn-raised btn-default">Load More …</a> </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="timeline">
+                                <div class="timeline-body">
+                                    <div class="timeline m-border">
+                                        <div class="timeline-item">
+                                            <div class="item-content">
+                                                <div class="text-small">Just now</div>
+                                                <p>Finished task #features 4.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-info">
+                                            <div class="item-content">
+                                                <div class="text-small">11:30</div>
+                                                <p>@Jessi retwit your post</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-warning border-l">
+                                            <div class="item-content">
+                                                <div class="text-small">10:30</div>
+                                                <p>Call to customer #Jacob and discuss the detail.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-warning">
+                                            <div class="item-content">
+                                                <div class="text-small">3 days ago</div>
+                                                <p>Jessi commented your post.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-danger">
+                                            <div class="item-content">
+                                                <div class="text--muted">Thu, 10 Mar</div>
+                                                <p>Trip to the moon</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-info">
+                                            <div class="item-content">
+                                                <div class="text-small">Sat, 5 Mar</div>
+                                                <p>Prepare for presentation</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-danger">
+                                            <div class="item-content">
+                                                <div class="text-small">Sun, 11 Feb</div>
+                                                <p>Jessi assign you a task #Mockup Design.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-info">
+                                            <div class="item-content">
+                                                <div class="text-small">Thu, 17 Jan</div>
+                                                <p>Follow up to close deal</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="item-content">
+                                                <div class="text-small">Just now</div>
+                                                <p>Finished task #features 4.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-info">
+                                            <div class="item-content">
+                                                <div class="text-small">11:30</div>
+                                                <p>@Jessi retwit your post</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-warning border-l">
+                                            <div class="item-content">
+                                                <div class="text-small">10:30</div>
+                                                <p>Call to customer #Jacob and discuss the detail.</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item border-warning">
+                                            <div class="item-content">
+                                                <div class="text-small">3 days ago</div>
+                                                <p>Jessi commented your post.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="usersettings">
+                                <h2 class="card-inside-title">Security Settings</h2>
+                                <div class="row clearfix">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="password" class="form-control" placeholder="Current Password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="password" class="form-control" placeholder="New Password">
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-raised btn-primary">Save Changes</button>
+                                    </div>
+                                </div>
+                                <h2 class="card-inside-title">Account Settings</h2>
+                                <div class="row clearfix">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <textarea rows="4" class="form-control no-resize" placeholder="Address Line 1"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="City">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="E-mail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="Country">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 m-t-20">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="optionsCheckboxes" type="checkbox">
+                                                <span class="checkbox-material"><span class="check"></span></span> Profile Visibility For Everyone </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="optionsCheckboxes" checked="" type="checkbox">
+                                                <span class="checkbox-material"><span class="check"></span></span> New task notifications </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="optionsCheckboxes" type="checkbox">
+                                                <span class="checkbox-material"><span class="check"></span></span> New friend request notifications </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 m-t-20">
+                                        <button class="btn btn-raised btn-primary ">Save Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
