@@ -7,6 +7,7 @@
                     <div class="body">
                         <table>
                             <tbody style="display: inline-flex; margin:0px 30px 10px;">
+
                                 <tr id="filter_col1" data-column="1">
                                     <td> Entreprise </td>
                                     <td align="center"> <input type="text" class="column_filter" id="col1_filter"> </td>
@@ -18,7 +19,7 @@
                                 </tr>
 
                                 <tr id="filter_col5" data-column="5">
-                                    <td> Prenom Referent </td>
+                                    <td> Prénom Référent </td>
                                     <td align="center"> <input type="text" class="column_filter" id="col5_filter"> </td>
                                 </tr>
 
@@ -29,6 +30,7 @@
 
                             </tbody>
                         </table>
+
                         <table id="tabe" class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
@@ -37,9 +39,9 @@
                                     <th> Secteur D'activités </th>
                                     <th> Membre ASPRH </th>
                                     <th> Cotisation Cfce </th>
-                                    <th> Prenom & Nom du Referent </th>
-                                    <th> Fonction du Referent </th>
-                                    <th> Telephone </th>
+                                    <th> Prénom & Nom du Référent </th>
+                                    <th> Fonction du Référent </th>
+                                    <th> Téléphone </th>
                                     <th> Email </th>
                                 </tr>
                             </thead>
@@ -56,7 +58,7 @@
                                     <td>{{ structure.Telephone }}</td>
                                     <td>{{ structure.Email }}</td>
                                 </tr>
-                                    {% else %}
+                            {% else %}
                                 <tr>
                                     <td colspan="9">no records found</td>
                                 </tr>

@@ -95,4 +95,5 @@ class RegistrationController extends AbstractController
 
         return $this->redirectToRoute('app_register');
     }
+
 }
