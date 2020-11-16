@@ -1,0 +1,31 @@
+            <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2> STRUCTURE INSCRITE </h2>
+                    </div>
+                    <div class="body">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <thead>
+                                <tr>
+                                    <th> Id </th>
+                                    <th> Libelle </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for activite in activites %}
+                                <tr>
+                                    <td> {{ activite.id }} </td>
+                                    <td> {{ activite.Libelle }} </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="9">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>

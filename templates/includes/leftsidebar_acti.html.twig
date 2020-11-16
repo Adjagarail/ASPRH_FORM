@@ -1,0 +1,33 @@
+<!-- Left Sidebar -->
+<aside id="leftsidebar" class="sidebar">
+
+    {% if app.user %}
+    
+    <!-- User Info -->
+    <div class="user-info">
+
+        <div class="image">
+            <img src="https://ui-avatars.com/api/?name={{app.user.NomComplet}}&background=0D8ABC&color=fff&rounded=true" width="48" height="48" alt="User_Avatar" />
+        </div>
+
+        <div class="info-container">
+            <div class="name" data-toggle="dropdown">{{ app.user.NomComplet }}</div>
+            <div class="btn-group user-helper-dropdown">
+                <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="button"> keyboard_arrow_down </i>
+                <ul class="dropdown-menu slideUp">
+                    <li><a href="{{path('profil')}}"><i class="material-icons">person</i>Profil</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{{path('app_logout')}}"><i class="material-icons">input</i>Sign Out</a></li>
+                </ul>
+            </div>
+            <div class="email"> {{ app.user.username }} </div>
+        </div>
+
+    </div>
+    <!-- #User Info --> 
+
+    {% endif %}
+
+    {{ include('includes/mainmenu_acti.html.twig') }}
+
+</aside> 

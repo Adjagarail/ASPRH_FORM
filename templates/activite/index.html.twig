@@ -1,35 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_dashboard.html.twig' %}
 
 {% block title %}Activite index{% endblock %}
 
 {% block body %}
-    <h1>Activite index</h1>
+{{ include('includes/leftsidebar_acti.html.twig') }}
+{{ include('includes/navbartop.html.twig') }}
+<!-- Main Content -->
+<section class="content home">
+    {{ include('includes/welcome.html.twig') }}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Libelle</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for activite in activites %}
-            <tr>
-                <td>{{ activite.id }}</td>
-                <td>{{ activite.Libelle }}</td>
-                <td>
-                    <a href="{{ path('activite_show', {'id': activite.id}) }}">show</a>
-                    <a href="{{ path('activite_edit', {'id': activite.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {{ include('includes/table_activite.html.twig') }}
 
-    <a href="{{ path('activite_new') }}">Create new</a>
+    <div class="container-fluid">
+        {{ include('includes/footer.html.twig') }}
+    </div>
+    
+</section>
+
 {% endblock %}
