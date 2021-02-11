@@ -6,4 +6,4 @@ swiftmailer:
     port: 465
     host: smtp.gmail.com
     username: adjagarail@gmail.com
-    password: koenigsegg
+    password: ###########
